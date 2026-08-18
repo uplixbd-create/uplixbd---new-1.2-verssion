@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #100022;
+    --bg-secondary: #24004F;
+    --bg-card: #1B0638;
+    --border-card: #54218A;
+    --purple-primary: #5B0BB5;
+    --purple-bright: #7606CB;
+    --violet-highlight: #8B2BE2;
+    --blue-accent: #2563EB;
+    --yellow-badge: #FACC15;
+    --text-primary: #FFFFFF;
+    --text-secondary: #E9E1F5;
+    --text-muted: #B8A9CC;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: #100022;
+    color: #FFFFFF;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  body {
+    background-color: #100022;
+    color: #E9E1F5;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Custom scrollbar for a sleek dark aesthetic */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #100022;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #3B0375;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #8B2BE2;
+  }
+}
+
+/* Glassmorphism & Liquid Glass */
+.liquid-glass {
+  background: rgba(20, 3, 46, 0.75);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(139, 43, 226, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(16, 0, 34, 0.4), inset 0 1px 0 0 rgba(192, 132, 252, 0.2);
+}
+
+.glass-card {
+  background: rgba(27, 6, 56, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid #54218A;
+}
+
+.glass-card:hover {
+  border-color: #8B2BE2;
+  box-shadow: 0 0 30px rgba(139, 43, 226, 0.22);
+}
+
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(139, 43, 226, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(139, 43, 226, 0.07) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
+.bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+/* Marquee infinite scroll */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Subtle button pulse */
+@keyframes ctaPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(139, 43, 226, 0.55);
+  }
+  50% {
+    box-shadow: 0 0 24px 6px rgba(139, 43, 226, 0.35);
+  }
+}
+
+.btn-pulse {
+  animation: ctaPulse 2.4s ease-in-out infinite;
+}
+
